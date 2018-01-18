@@ -1,0 +1,40 @@
+{
+    "AppName":"training",
+    "AppVersion":"1.0.0",
+    "ServerPort":"7300",
+    "LogConfFile":"conf/logger.json",
+    "MonitorConfig":{  
+        "AppName":"nemo",
+        "Platform":"DatadogAgent",
+        "AgentServer":"datadog:8125",
+        "Verbose":false,
+        "Enabled":true,
+        "MetricsServer":"datadog:8065"
+    },
+    "Performance":{  
+       "UseCorePercentage":100,
+       "GCPercentage":1000
+    },
+    "HttpConfig" : {
+         "MaxConn" : 10,
+         "MaxIdleConns" : 1000,
+         "ResponseHeaderTimeout" : 3000,
+         "DisableKeepAlives": false
+    },
+    "Profiler":{
+        "SamplingRate":0.6,
+        "Enable": true
+    },
+    "ApplicationConfig" : {
+    "PromotionConf" : {
+         "CreateVoucher" : "CREATE_VOUCHER_URL"
+    },
+    "EncrpServConf": {
+        "ReqTimeout": 2000,
+        "EndpointEncrypt": "ENCRYPT_ENDPOINT",
+        "EndpointDecrypt": "DECRYPT_ENDPOINT",
+        "Host": "ENCRYPTION_SERVICE_HOST"
+    },
+    "AmqpUrl" : "AMQP_URL"
+    }
+}
